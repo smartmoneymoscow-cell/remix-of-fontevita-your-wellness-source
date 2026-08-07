@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FonteVita</title>
+  <script>
+    var base = '/remix-of-fontevita-your-wellness-source';
+    var path = window.location.pathname;
+    if (path.startsWith(base)) {
+      path = path.slice(base.length);
+    }
+    // Store the clean path (without base) for the SPA router
+    sessionStorage.setItem('spa-redirect', path + window.location.search + window.location.hash);
+    window.location.replace(base + '/');
+  </script>
+</head>
+<body><p>Перенаправление...</p></body>
+</html>
