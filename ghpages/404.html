@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FonteVita — загрузка...</title>
+  <title>FonteVita</title>
   <script>
-    // SPA redirect: store the intended path and redirect to index
+    // Store the intended path and redirect to index
     var path = window.location.pathname;
     var base = '/remix-of-fontevita-your-wellness-source';
     if (path.startsWith(base)) {
       path = path.slice(base.length);
     }
-    // Store the path for the SPA to pick up
-    sessionStorage.setItem('spa-redirect', path + window.location.search + window.location.hash);
+    var full = path + window.location.search + window.location.hash;
+    sessionStorage.setItem('spa-redirect', full);
     window.location.replace(base + '/');
   </script>
 </head>
